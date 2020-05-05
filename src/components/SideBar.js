@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './SideBar.module.css'
 
 const SideBar = props => {
   const recentColors = false
@@ -8,7 +9,7 @@ const SideBar = props => {
   }
 
   return (
-    <section>
+    <section className={styles.sideBar}>
       <button onClick={onRandomColor}>Random Color</button>
       {recentColors && <RecentColors colors={recentColors} />}
     </section>

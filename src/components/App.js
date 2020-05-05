@@ -9,23 +9,26 @@ import AppNavBar from './AppNavBar'
 import SideBar from './SideBar'
 import ColorListPage from './ColorListpage'
 import ColorDetailPage from './ColorDetailPage'
+import { ColorProvider } from '../store'
 
 const App = () => {
   return (
-    <div className={styles.App}>
-      <AppNavBar />
-      <SideBar />
-      <Router>
-        <Switch>
-          <Route exact path='/'>
-            <ColorListPage />
-          </Route>
-          <Route path='/:color'>
-            <ColorDetailPage />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <ColorProvider>
+      <div className={styles.App}>
+        <AppNavBar />
+        <SideBar />
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+              <ColorListPage />
+            </Route>
+            <Route path='/:color'>
+              <ColorDetailPage />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </ColorProvider>
   )
 }
 

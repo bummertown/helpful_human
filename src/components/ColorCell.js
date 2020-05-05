@@ -3,7 +3,7 @@ import React from 'react'
 const ColorCell = props => {
   return (
     <div>
-      cell
+      {props.color}
     </div>
   )
 }
