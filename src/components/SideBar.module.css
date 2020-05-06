@@ -1,5 +1,6 @@
 .sideBar {
   width: var(--side-bar-width);
+  box-sizing: border-box;
   background-color: #D6D8D8;
   padding-left: 30px;
   padding-right: 30px;

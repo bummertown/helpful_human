@@ -1,15 +1,12 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+  BrowserRouter as Router
 } from 'react-router-dom'
 import styles from './App.module.css'
 import AppNavBar from './AppNavBar'
 import SideBar from './SideBar'
-import ColorListPage from './ColorListPage'
-import ColorDetailPage from './ColorDetailPage'
 import { ColorProvider } from '../store'
+import ColorPage from './ColorPage'
 
 const App = () => {
   return (
@@ -19,16 +16,7 @@ const App = () => {
         <Router>
           <div className={styles.container}>
             <SideBar />
-            <div className={styles.content}>
-              <Switch>
-                <Route exact path='/'>
-                  <ColorListPage />
-                </Route>
-                <Route path='/:color'>
-                  <ColorDetailPage />
-                </Route>
-              </Switch>
-            </div>
+            <ColorPage />
           </div>
         </Router>
       </div>

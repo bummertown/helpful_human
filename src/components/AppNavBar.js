@@ -6,7 +6,6 @@ import { ColorContext } from '../store'
 const AppNavBar = props => {
   const { setFilter } = useContext(ColorContext)
   const onSearchChange = event => {
-    console.log(event.target.value)
     setFilter(event.target.value)
   }
 

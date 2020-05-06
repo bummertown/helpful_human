@@ -6,7 +6,7 @@ const ColorCell = props => {
   return (
     <div className={styles.cell}>
       <Link to={`/${props.color}`}>
-        <div className={styles.preview} style={{ backgroundColor: props.color }} />
+        <div className={styles.preview} style={{ backgroundColor: `#${props.color}` }} />
         <div>
           <p className={styles.name}>{`#${props.color}`}</p>
         </div>
