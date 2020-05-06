@@ -22,7 +22,7 @@ const ColorDetailPage = props => {
         <p className={styles.name}>{`${hexColor}`}</p>
       </div>
       <div className={styles.shades}>
-        {shades.map((color, index) => <ColorCell color={color} key={color + index} />)}
+        {shades.map((color, index) => <ColorCell color={color} key={color + index} isSmall />)}
       </div>
       <button className={styles.actionButton}>Button</button>
     </div>

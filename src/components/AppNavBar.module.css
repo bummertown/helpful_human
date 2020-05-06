@@ -1,6 +1,9 @@
 .appNavBar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background-color: var(--primary-color);
-  height: 100px;
+  height: var(--nav-bar-height);
   display: flex;
   flex-direction: row;
   align-items: center;

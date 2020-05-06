@@ -1,20 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
 
-html {
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-}
-
-body {
-  height: 100%;
+* {
   margin: 0;
+  padding: 0px;
   font-family: 'Source Serif Pro';
   font-size: 24px;
   color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
 }
 
 p {
@@ -44,4 +41,5 @@ code {
 :root {
   --primary-color: #363C3C;
   --side-bar-width: 320px;
+  --nav-bar-height: 100px;
 }
