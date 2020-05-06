@@ -7,7 +7,7 @@ import {
 import styles from './App.module.css'
 import AppNavBar from './AppNavBar'
 import SideBar from './SideBar'
-import ColorListPage from './ColorListpage'
+import ColorListPage from './ColorListPage'
 import ColorDetailPage from './ColorDetailPage'
 import { ColorProvider } from '../store'
 
@@ -16,16 +16,20 @@ const App = () => {
     <ColorProvider>
       <div className={styles.App}>
         <AppNavBar />
-        <SideBar />
         <Router>
-          <Switch>
-            <Route exact path='/'>
-              <ColorListPage />
-            </Route>
-            <Route path='/:color'>
-              <ColorDetailPage />
-            </Route>
-          </Switch>
+          <div className={styles.container}>
+            <SideBar />
+            <div className={styles.content}>
+              <Switch>
+                <Route exact path='/'>
+                  <ColorListPage />
+                </Route>
+                <Route path='/:color'>
+                  <ColorDetailPage />
+                </Route>
+              </Switch>
+            </div>
+          </div>
         </Router>
       </div>
     </ColorProvider>

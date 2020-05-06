@@ -1,7 +1,8 @@
 import React, { createContext, useReducer } from 'react'
 
 const initialSate = {
-  colors: ['333333', '000000']
+  colors: ['333333', '000000', 'red', 'green'],
+  recentColors: ['red', 'blue']
 }
 
 const reducer = (state, action) => {
@@ -13,6 +14,11 @@ const reducer = (state, action) => {
       }
     case 'remove_color':
       break
+    case 'add_color_to_recents':
+      return {
+        ...state,
+        recentColors: [...state.recentColors, action.payload]
+      }
     case 'set_colors':
       return {
         ...state,
@@ -51,6 +57,18 @@ export const ColorProvider = ({ children }) => {
     })
   }
 
+  const addColorToRecents = color => {
+    dispatch({
+      type: 'add_color_to_recents',
+      payload: color
+    })
+  }
+
+  const getRandomColor = (state) => {
+    const index = Math.floor(Math.random() * state.colors.length)
+    return state.colors[index]
+  }
+
   const setColors = colors => {
     dispatch({
       type: 'set_colors',
@@ -70,7 +88,10 @@ export const ColorProvider = ({ children }) => {
     setColors,
     addColor,
     removeColor,
-    setFilter
+    setFilter,
+    addColorToRecents,
+    recentColors: state.recentColors,
+    getRandomColor: () => getRandomColor(state)
   }
 
   return (

@@ -6,6 +6,7 @@ const ColorDetailPage = props => {
 
   return (
     <div>
+      DetailPage
       {params.color}
     </div>
   )
