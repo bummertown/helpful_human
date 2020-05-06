@@ -5,11 +5,9 @@ import styles from './ColorCell.module.css'
 const ColorCell = props => {
   return (
     <div className={styles.cell}>
-      <Link to={`/${props.color}`}>
-        <div className={styles.preview} style={{ backgroundColor: `#${props.color}` }} />
-        <div>
-          <p className={styles.name}>{`#${props.color}`}</p>
-        </div>
+      <Link to={`/${props.color.substring(1)}`}>
+        <div className={styles.preview} style={{ backgroundColor: `${props.color}` }} />
+        <p className={styles.name}>{`${props.color}`}</p>
       </Link>
     </div>
   )

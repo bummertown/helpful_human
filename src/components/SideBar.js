@@ -10,7 +10,7 @@ const SideBar = props => {
   const onRandomColor = event => {
     const color = getRandomColor()
     addColorToRecents(color)
-    history.push(`/${color}`)
+    history.push(`/${color.substring(1)}`)
   }
 
   return (
@@ -29,7 +29,7 @@ const RecentColors = props => {
       <h1>Recent Colors</h1>
       <ul>
         {props.colors.map(color =>
-          <li key={color}><Link to={`/${color}`}>{color}</Link></li>
+          <li key={color}><Link to={`/${color.substring(1)}`}>{color}</Link></li>
         )}
       </ul>
     </div>

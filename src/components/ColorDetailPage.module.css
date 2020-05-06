@@ -1,0 +1,46 @@
+.preview {
+  width: 100%;
+  margin-bottom: 30px;
+  border: 1px solid #363C3C;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.color {
+  height: 600px;
+}
+
+.name {
+  height: 138px;
+  line-height: 138px;
+  padding-left: 40px;
+}
+
+.shades {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.shades div:not(:last-child) {
+  margin-right: 40px;
+}
+
+.actionButton {
+  display: block;
+  width: 260px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  background: #FFFFFF;
+  border: 1px solid var(--primary-color);
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: Source Serif Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+}

@@ -2,8 +2,8 @@ import React, { createContext, useReducer } from 'react'
 
 const initialSate = {
   colors: [
-    '333333', '000000', 'fffccc', 'eaea3c', 'a34859', 'dd1d73', 'b5e561', '1b2287', '759d0c', '65f945',
-    '333333', '000000', 'fffccc', 'eaea3c', 'a34859', 'dd1d73', 'b5e561', '1b2287', '759d0c', '65f945'
+    '#333333', '#000000', '#fffccc', '#eaea3c', '#a34859', '#dd1d73', '#b5e561', '#1b2287', '#759d0c', '#65f945',
+    '#333333', '#000000', '#fffccc', '#eaea3c', '#a34859', '#dd1d73', '#b5e561', '#1b2287', '#759d0c', '#65f945'
   ],
   recentColors: [],
   filter: null
