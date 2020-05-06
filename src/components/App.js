@@ -12,8 +12,8 @@ const App = () => {
   return (
     <ColorProvider>
       <div className={styles.App}>
-        <AppNavBar />
         <Router>
+          <AppNavBar />
           <div className={styles.container}>
             <SideBar />
             <ColorPage />
