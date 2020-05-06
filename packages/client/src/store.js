@@ -1,20 +1,8 @@
 import React, { createContext, useReducer } from 'react'
-
-const getRandomColor = () => {
-  // copied from SO!
-  return '#' + Math.floor(Math.random() * 16777215).toString(16)
-}
-
-const initialColors = () => {
-  const colors = []
-  for (let i = 0; i < 100; i++) {
-    colors.push(getRandomColor())
-  }
-  return colors
-}
+import { getRandomColors } from 'shared'
 
 const initialSate = {
-  colors: initialColors(),
+  colors: getRandomColors(100),
   recentColors: [],
   filter: null
 }
@@ -101,8 +89,7 @@ export const ColorProvider = ({ children }) => {
     filter: state.filter,
     setFilter,
     addColorToRecents,
-    recentColors: state.recentColors,
-    getRandomColor
+    recentColors: state.recentColors
   }
 
   return (

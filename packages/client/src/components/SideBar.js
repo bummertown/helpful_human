@@ -2,13 +2,15 @@ import React, { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import styles from './SideBar.module.css'
 import { ColorContext } from '../store'
+import { getRandomColor } from 'shared'
 
 const SideBar = props => {
-  const { recentColors, addColorToRecents, getRandomColor } = useContext(ColorContext)
+  const { recentColors, addColorToRecents } = useContext(ColorContext)
   const history = useHistory()
 
   const onRandomColor = event => {
     const color = getRandomColor()
+    console.log(color)
     addColorToRecents(color)
     history.push(`/${color.substring(1)}`)
   }
