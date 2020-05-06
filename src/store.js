@@ -37,10 +37,11 @@ const reducer = (state, action) => {
 }
 
 const getVisibleColors = (state) => {
+  let colors = state.colors
   if (state.filter) {
-    return state.colors.filter(color => color.includes(state.filter))
+    colors = colors.filter(color => color.includes(state.filter))
   }
-  return state.colors
+  return colors
 }
 
 export const ColorContext = createContext(null)

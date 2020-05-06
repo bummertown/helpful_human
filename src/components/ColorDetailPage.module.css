@@ -1,4 +1,5 @@
 .preview {
+  width: 100%;
   margin-bottom: 30px;
   border: 1px solid #363C3C;
   box-sizing: border-box;
@@ -20,10 +21,8 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 40px;
-}
-
-.shades div:not(:last-child) {
-  margin-right: 40px;
+  gap: 40px 40px;
+  flex-wrap: wrap;
 }
 
 .actionButton {

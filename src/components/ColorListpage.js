@@ -22,7 +22,7 @@ const ColorListPage = props => {
   return (
     <div>
       <div className={styles.colors}>
-        {visibleColors().map(color => <ColorCell color={color} key={color} />)}
+        {visibleColors().map((color, index) => <ColorCell color={color} key={color + index} />)}
       </div>
       <Pagination currentPage={currentPage} postsPerPage={POSTS_PER_PAGE} totalPages={colors.length} onPaginate={onPaginate} />
     </div>
