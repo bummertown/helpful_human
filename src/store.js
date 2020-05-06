@@ -1,10 +1,20 @@
 import React, { createContext, useReducer } from 'react'
 
+const getRandomColor = () => {
+  // copied from SO!
+  return '#' + Math.floor(Math.random() * 16777215).toString(16)
+}
+
+const initialColors = () => {
+  const colors = []
+  for (let i = 0; i < 100; i++) {
+    colors.push(getRandomColor())
+  }
+  return colors
+}
+
 const initialSate = {
-  colors: [
-    '#333333', '#000000', '#fffccc', '#eaea3c', '#a34859', '#dd1d73', '#b5e561', '#1b2287', '#759d0c', '#65f945',
-    '#333333', '#000000', '#fffccc', '#eaea3c', '#a34859', '#dd1d73', '#b5e561', '#1b2287', '#759d0c', '#65f945'
-  ],
+  colors: initialColors(),
   recentColors: [],
   filter: null
 }
@@ -69,11 +79,6 @@ export const ColorProvider = ({ children }) => {
     })
   }
 
-  const getRandomColor = (state) => {
-    const index = Math.floor(Math.random() * state.colors.length)
-    return state.colors[index]
-  }
-
   const setColors = colors => {
     dispatch({
       type: 'set_colors',
@@ -97,7 +102,7 @@ export const ColorProvider = ({ children }) => {
     setFilter,
     addColorToRecents,
     recentColors: state.recentColors,
-    getRandomColor: () => getRandomColor(state)
+    getRandomColor
   }
 
   return (
