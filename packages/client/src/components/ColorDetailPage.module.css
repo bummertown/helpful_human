@@ -1,5 +1,8 @@
+.container {
+  max-width: 1040px;
+}
+
 .preview {
-  width: 100%;
   margin-bottom: 30px;
   border: 1px solid #363C3C;
   box-sizing: border-box;
@@ -8,20 +11,20 @@
 }
 
 .color {
-  height: 600px;
+  height: 200px;
 }
 
 .name {
-  height: 138px;
-  line-height: 138px;
+  height: 60px;
+  line-height: 60px;
   padding-left: 40px;
+  font-size: 48px;
 }
 
 .shades {
   display: flex;
   flex-direction: row;
   margin-bottom: 40px;
-  gap: 40px 40px;
   flex-wrap: wrap;
 }
 
@@ -41,4 +44,15 @@
   font-weight: bold;
   font-size: 24px;
   line-height: 33px;
+}
+
+@media (min-width: 768px) {
+  .color {
+    height: 600px;
+  }
+  
+  .name {
+    height: 138px;
+    line-height: 138px;
+  }
 }

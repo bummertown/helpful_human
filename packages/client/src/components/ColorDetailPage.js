@@ -16,7 +16,7 @@ const ColorDetailPage = props => {
   ]
 
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.preview}>
         <div className={styles.color} style={{ backgroundColor: `${hexColor}` }} />
         <p className={styles.name}>{`${hexColor}`}</p>
