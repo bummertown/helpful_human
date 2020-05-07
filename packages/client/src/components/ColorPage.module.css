@@ -1,6 +1,14 @@
 .content {
   flex: auto;
-  padding-top: 80px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }

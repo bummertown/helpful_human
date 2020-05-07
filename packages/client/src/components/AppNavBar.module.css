@@ -3,23 +3,30 @@
   top: 0;
   z-index: 100;
   background-color: var(--primary-color);
-  height: var(--nav-bar-height);
+  height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-left: 16px;
   padding-right: 16px;
   box-sizing: border-box;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-  width: 52px;
-  height: 52px;
+  width: 30px;
+  height: 30px;
+  margin-right: 16px;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
 }
 
 .searchBar {
-  width: 320px;
-  height: 60px;
+  width: 240px;
+  height: 30px;
   margin-left: auto;
   border: 1px solid var(--primary-color);
   box-sizing: border-box;
@@ -29,6 +36,56 @@
   font-family: Helvetica;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 14px;
+}
+
+.menu {
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin-right: 16px;
+}
+
+.menu img {
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 768px) {
+  .appNavBar {
+    height: 100px;
+  }
+
+  .logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .logo img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .menu {
+    width: 52px;
+    height: 52px;
+  }
+
+  .menu img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .searchBar {
+    width: 320px;
+    height: 60px;
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    display: none;
+  }
 }

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo-symbol.svg'
+import menuIcon from '../assets/menu.svg'
 import styles from './AppNavBar.module.css'
 import { ColorContext } from '../store'
 
@@ -12,8 +13,9 @@ const AppNavBar = props => {
 
   return (
     <div className={styles.appNavBar}>
-      <Link to='/'>
-        <img className={styles.logo} src={logo} />
+      <button className={styles.menu} onClick={props.onMenuClicked}><img src={menuIcon} /></button>
+      <Link to='/' className={styles.logo}>
+        <img src={logo} />
       </Link>
       <input className={styles.searchBar} type='text' name='search' placeholder='Search' onChange={onSearchChange} />
     </div>

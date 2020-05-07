@@ -24,7 +24,7 @@ const ColorDetailPage = props => {
       <div className={styles.shades}>
         {shades.map((color, index) => <ColorCell color={color} key={color + index} isSmall />)}
       </div>
-      <button className={styles.actionButton}>Button</button>
+      <button className={styles.actionButton}>Clear</button>
     </div>
   )
 }
