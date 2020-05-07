@@ -1,8 +1,7 @@
 import React, { createContext, useReducer } from 'react'
-import { getRandomColors } from 'shared'
 
 const initialSate = {
-  colors: getRandomColors(100),
+  colors: [],
   recentColors: [],
   filter: null
 }

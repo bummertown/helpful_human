@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import {
   useHistory
 } from 'react-router-dom'
@@ -6,13 +6,15 @@ import styles from './App.module.css'
 import AppNavBar from './AppNavBar'
 import SideBar from './SideBar'
 import Backdrop from './Backdrop'
-
+import { ColorContext } from '../store'
 import ColorPage from './ColorPage'
 import { getRandomColor } from 'shared'
+import { firebaseDb } from 'shared/firebase'
 
 const App = () => {
   const [isMenuVisible, setMenuVisible] = useState(false)
   const history = useHistory()
+  const { setColors } = useContext(ColorContext)
 
   const onToggleMenu = (event) => {
     console.log(!isMenuVisible)
@@ -30,6 +32,18 @@ const App = () => {
   // temp fix to close mobile menu in case you go from mobile > desktop size  ⋋| ◉ ͟ʖ ◉ |⋌
   useEffect(() => {
     window.addEventListener('resize', () => setMenuVisible(false))
+  }, [])
+
+  useEffect(() => {
+    firebaseDb.collection('colors').get().then(snapshot => {
+      const colors = []
+      snapshot.forEach(doc => {
+        colors.push(doc.data().value)
+      })
+      setColors(colors)
+    }).catch(error => {
+      console.log(error)
+    })
   }, [])
 
   return (
