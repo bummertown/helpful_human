@@ -1,6 +1,6 @@
 const getRandomColor = () => {
   // copied from SO!
-  return '#' + Math.floor(Math.random() * 16777215).toString(16)
+  return '#' + Math.random().toString(16).substr(2, 6)
 }
 
 const getRandomColors = count => {
